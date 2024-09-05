@@ -1,6 +1,6 @@
 if($host.Name -ne "ConsoleHost")
 {
-    Start-Process powershell -ArgumentList '-noprofile -noexit -command iex (New-Object Net.WebClient).DownloadString(''http://bit.ly/rRpwSh'')'
+    Start-Process powershell -ArgumentList '-noprofile -noexit -command [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12;iex (New-Object Net.WebClient).DownloadString(''http://bit.ly/rRpwSh'')'
     return
 }
 
